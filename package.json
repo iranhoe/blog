@@ -1,0 +1,28 @@
+{
+  "name": "iranblog",
+  "version": "1.0.0",
+  "description": "Just another developer blog",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iranhoe/blog.git"
+  },
+  "keywords": [
+    "blog",
+    "vanilla",
+    "dev"
+  ],
+  "author": "Iran Corrales Becerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iranhoe/blog/issues"
+  },
+  "homepage": "https://github.com/iranhoe/blog#readme"
+}
