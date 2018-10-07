@@ -1,35 +1,6 @@
 (function() {
     let converter = new showdown.Converter();
 
-    let readTextFile = (file, callback) => {
-        var xmlHttpRequest = new XMLHttpRequest();
-        xmlHttpRequest.open("GET", file, true);
-        xmlHttpRequest.onreadystatechange = function ()
-        {
-            if(xmlHttpRequest.readyState === 4)
-            {
-                if(xmlHttpRequest.status === 200 || xmlHttpRequest.status == 0)
-                {
-                    var allText = xmlHttpRequest.responseText;
-                    callback(allText);
-                }
-            }
-        }
-        xmlHttpRequest.send(null);
-    }
-
-    /**
-     * Load post on the page
-     * @param {string} name 
-     */
-    let loadPost = (lang, name) => {
-        readTextFile(`../Post/${lang}/${name}.md`, function(markdown) {
-            html = converter.makeHtml(markdown),
-            main = document.getElementById("main");
-            main.innerHTML = html;
-        });
-    }
-
     let getParameterByName = (name, url) => {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
@@ -54,6 +25,59 @@
         lang = lang || "es-mx";
         post = post || "test";
         loadPost(lang, post);
+        loadSticky(post);
+    }
+
+    /**
+     * Load post on the page
+     * @param {string} name 
+     */
+    let loadPost = (lang, name) => {
+        readTextFile(`../Post/${lang}/${name}.md`, function(markdown) {
+            html = converter.makeHtml(markdown),
+            main = document.getElementById("main");
+            main.innerHTML = html;
+        });
+    }
+
+    /**
+     * Load Sticky on the page
+     * @param {string} name 
+     */
+    let loadSticky = (name) => {
+        let url = `../Post/Sticky/${name}.md`;
+        if (!UrlExists(url)){
+            url = `../Post/Sticky/default.md`;
+        }
+        readTextFile(url, function(markdown) {
+            html = converter.makeHtml(markdown),
+            main = document.getElementById("sticky");
+            main.innerHTML = html;
+        });
+    }
+
+    let readTextFile = (file, callback) => {
+        var xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("GET", file, true);
+        xmlHttpRequest.onreadystatechange = function ()
+        {
+            if(xmlHttpRequest.readyState === 4)
+            {
+                if(xmlHttpRequest.status === 200 || xmlHttpRequest.status == 0)
+                {
+                    var allText = xmlHttpRequest.responseText;
+                    callback(allText);
+                }
+            }
+        }
+        xmlHttpRequest.send(null);
+    }
+
+    let UrlExists = url => {
+        let http = new XMLHttpRequest();
+        http.open('HEAD', url, false)
+        http.send();
+        return http.status != 404;
     }
 
     init();
