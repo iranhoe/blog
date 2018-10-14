@@ -4,10 +4,9 @@
   "description": "Just another developer blog",
   "private": true,
   "main": "index.js",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "jasmine": "^3.1.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"

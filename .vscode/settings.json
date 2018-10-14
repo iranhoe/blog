@@ -6,6 +6,10 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/.gitignore": true,
-        "**/node_modules": true
+        "**/node_modules": true,
+        "**/.vs": true,
+        "**/.vscode": true,
+        "**/dist": true,
+        "**/package-lock.json": true
     }
 }
