@@ -5,7 +5,7 @@ import * as paramReader from './paramReader.js';
     let init= () => {
         let post = paramReader.getHashParameterByName("post");
         let lang = paramReader.getHashParameterByName("lang");
-        lang = lang || "es-mx";
+        lang = lang || "es-MX";
         post = post || "test";
         fileLoader.loadPost(lang, post);
         fileLoader.loadSticky(post);

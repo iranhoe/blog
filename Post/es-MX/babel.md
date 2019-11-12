@@ -1,5 +1,6 @@
-### BABEL Basico <small>2018/10/05</small>
-![Alt text](http://placehold.it/850x350) 
+# BABEL Básico <small>2018/10/05</small>
+
+![Alt text](http://placehold.it/850x350)
 
 Para conocer el soporte de ECMAScript puedes ingresar a [ECMAScript](kangax.gitbub.io)
 

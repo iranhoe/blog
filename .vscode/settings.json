@@ -9,7 +9,6 @@
         "**/node_modules": true,
         "**/.vs": true,
         "**/.vscode": true,
-        "**/dist": true,
         "**/package-lock.json": true
     }
 }
