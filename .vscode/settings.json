@@ -10,5 +10,6 @@
         "**/.vs": true,
         "**/.vscode": true,
         "**/package-lock.json": true
-    }
+    },
+    "cSpell.language": ",es"
 }
