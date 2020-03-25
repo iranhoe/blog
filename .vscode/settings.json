@@ -11,7 +11,5 @@
         "**/.vscode": true,
         "**/package-lock.json": true
     },
-    "cSpell.enableFiletypes": [
-        "markdown"
-    ]
+    "cSpell.language": ",es"
 }
